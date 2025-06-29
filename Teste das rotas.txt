@@ -1,0 +1,94 @@
+Primeiro, é necessário criar equipas antes de criar jogadores e jogos,
+pois jogadores precisam estar vinculados a uma equipa (teamId) e 
+jogos precisam de duas equipas já cadastradas (homeTeamId e awayTeamId). Portanto, siga a ordem: crie equipas, depois jogadores, 
+e só então crie jogos.
+
+URL's para testar as rotas no POSTMAN: EQUIPAS
+- Criar uma equipa:
+  Método: POST
+  URL: http://localhost:3000/api/teams
+
+  {
+  "name": "Barcelona",
+  "coach": "Hansi Flick",
+  "logoUrl": "https://Barcelona.svg",
+  "ranking": 1,
+  "points": 90
+}
+
+- Obter todas as equipas:
+  Método: GET
+  URL: http://localhost:3000/api/teams
+
+- Obter uma equipa por ID:
+  Método: GET
+  URL: http://localhost:3000/api/teams/:id
+
+=======================================================
+URL's para testar as rotas no POSTMAN: JOGADORES
+- Criar um jogador:
+  Método: POST
+  URL: http://localhost:3000/api/players
+
+  {
+  "name": "Lewandosky",
+  "position": "Atacante",
+  "number": 9,
+  "teamId": 2,
+  "goals": 30,
+  "assists": 25,
+  "appearances": 40,
+  "age": 33,
+  "nationality": "Polaco"
+}
+
+- Obter todos os jogadores:
+  Método: GET
+  URL: http://localhost:3000/api/players
+
+- Obter um jogador por ID:
+  Método: GET
+  URL: http://localhost:3000/api/players/:id
+
+=======================================================
+URL's para testar as rotas no POSTMAN: JOGOS
+- Criar um jogo:
+  Método: POST
+  URL: http://localhost:3000/api/games
+
+  {
+  "homeTeamId": 1,
+  "awayTeamId": 2,
+  "homeTeamScore": 3,
+  "awayTeamScore": 1,
+  "date": "2024-07-01T19:00:00.000Z",
+  "location": "Estádio Nacional",
+  "status": "finalizado"
+}
+
+- Obter todos os jogos:
+  Método: GET
+  URL: http://localhost:3000/api/games
+
+- Obter um jogo por ID:
+  Método: GET
+  URL: http://localhost:3000/api/games/:id
+
+=======================================================
+URL's para testar as rotas no POSTMAN: NOTIFICAÇÕES
+- Enviar uma notificação:
+  Método: POST
+  URL: http://localhost:3000/api/notifications
+
+  {
+  "title": "Novo jogo",
+  "message": "Um novo jogo foi adicionado!",
+  "userId": 1
+}
+
+- (Opcional) Listar notificações:
+  Método: GET
+  URL: http://localhost:3000/api/notifications
+
+=======================================================
+=======================================================
